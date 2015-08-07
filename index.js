@@ -3,6 +3,9 @@
  */
 import http from 'http';
 
+// set up port
+const port = process.env.PORT || 8080;
+
 http.createServer((request, response) => {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write('<!DOCTYPE "html">');
@@ -15,6 +18,6 @@ http.createServer((request, response) => {
     response.write("</body>");
     response.write("</html>");
     response.end();
-}).listen(81);
+}).listen(port);
 
 console.log('Server started...');
