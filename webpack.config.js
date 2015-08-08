@@ -12,5 +12,8 @@ module.exports = {
             test: /\.js$/,
             loader: "babel-loader"
         }]
+    },
+    resolveLoader: {
+        root: __dirname + '/node_modules'
     }
 };
