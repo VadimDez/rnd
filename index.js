@@ -1,23 +1,17 @@
 /**
  * Created by Vadym on 07/08/15.
  */
-import http from 'http';
+import http from 'http'
+import express from 'express'
+import router from './roter.js'
 
 // set up port
 const port = process.env.PORT || 8080;
+const server = express();
 
-http.createServer((request, response) => {
-    response.writeHead(200, {"Content-Type": "text/html"});
-    response.write('<!DOCTYPE "html">');
-    response.write("<html>");
-    response.write("<head>");
-    response.write("<title>Hello World Page</title>");
-    response.write("</head>");
-    response.write("<body>");
-    response.write("Hello World!");
-    response.write("</body>");
-    response.write("</html>");
-    response.end();
-}).listen(port);
+// configure routes
+router(server);
 
-console.log('Server started...');
+server.listen(port, () => {
+    console.log(`Server started on port ${port}...`);
+});
