@@ -14,6 +14,6 @@ module.exports = {
         }]
     },
     resolveLoader: {
-        root: __dirname + '/node_modules'
+        root: './node_modules'
     }
 };
