@@ -1,0 +1,12 @@
+{
+  "name": "rnd",
+  "main": "index.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/VadimDez/rnd",
+  "authors": [
+    "Vadym Yatsyuk <vasp3d@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+  }
+}

@@ -1,17 +1,30 @@
 /**
  * Created by Vadym on 07/08/15.
  */
-import http from 'http'
 import express from 'express'
 import router from './roter.js'
+import socketio from 'socket.io'
 
 // set up port
 const port = process.env.PORT || 8080;
-const server = express();
+const app = express();
+
+// set static folder
+app.use(express.static(__dirname + '/public'));
 
 // configure routes
-router(server);
+router(app);
 
-server.listen(port, () => {
+const server = app.listen(port, () => {
     console.log(`Server started on port ${port}...`);
+});
+const io = socketio(server);
+
+// socket
+io.on('connection', (socket) => {
+    console.log('user connected');
+
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+    });
 });
