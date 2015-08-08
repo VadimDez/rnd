@@ -6,7 +6,8 @@
   "scripts": {
     "test": "./node_modules/karma/bin/karma start",
     "start": "npm run webpack && ./node_modules/babel/bin/babel-node.js index.js",
-    "webpack": "./node_modules/webpack/bin/webpack.js"
+    "webpack": "./node_modules/webpack/bin/webpack.js",
+    "postinstall": "./node_modules/webpack/bin/webpack.js"
   },
   "repository": {
     "type": "git",
